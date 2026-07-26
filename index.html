@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>AntiGravity 商業應用推薦 Agent Skills</title>
+  
+  <!-- Reveal.js CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/black.min.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- === 1. CSS STYLES FOR OVERLAY WIDGETS & CUSTOM TRANSITIONS === -->
+  <style>
+    /* === 全域主題 & 變數 === */
+    :root {
+      --accent:  #e8643a;   /* 橘紅 (主強調) */
+      --accent2: #4fc3f7;   /* 青色 (次強調) */
+      --success: #81c784;   /* 綠色 (正面) */
+      --warn:    #ffb74d;   /* 琥珀色 (提示) */
+      --bg-dark: #0d1117;   /* 深色背景 */
+    }
+
+    body {
+      font-family: 'Outfit', 'Inter', 'Noto Sans TC', sans-serif !important;
+      background-color: #0d1117 !important;
+      background-image: radial-gradient(circle at 15% 15%, rgba(79, 195, 247, 0.05), transparent 45%), 
+                        radial-gradient(circle at 85% 85%, rgba(232, 100, 58, 0.05), transparent 45%) !important;
+      color: #c9d1d9 !important;
+    }
+
+    .reveal {
+      font-family: inherit !important;
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    /* === 投影片標題與文字 === */
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+      font-family: 'Outfit', 'Noto Sans TC', sans-serif !important;
+      color: #ffffff !important;
+      text-transform: none !important;
+      letter-spacing: -0.02em;
+    }
+
+    .reveal h1 {
+      font-size: 1.6em !important;
+      font-weight: 900 !important;
+      line-height: 1.2 !important;
+      margin-bottom: 20px !important;
+      background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .reveal h2 {
+      font-size: 1.15em !important;
+      font-weight: 800 !important;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 12px;
+      margin-bottom: 30px !important;
+      display: inline-block;
+    }
+
+    .reveal h3 {
+      font-size: 0.82em !important;
+      font-weight: 700 !important;
+      margin-bottom: 12px !important;
+      color: var(--accent2) !important;
+    }
+
+    .reveal p, .reveal li {
+      font-size: 0.58em !important;
+      line-height: 1.6 !important;
+      color: #8b949e !important;
+    }
+
+    .reveal strong {
+      color: #ffffff !important;
+    }
+
+    /* === 排版與卡片系統 === */
+    .grid-container {
+      display: grid !important;
+      gap: 20px !important;
+      width: 100% !important;
+    }
+
+    .grid-2 {
+      grid-template-columns: 1.1fr 0.9fr !important;
+    }
+
+    .grid-3 {
+      grid-template-columns: 1fr 1fr 1fr !important;
+    }
+
+    .glass-card {
+      background: rgba(22, 27, 34, 0.5) !important;
+      backdrop-filter: blur(12px) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-radius: 12px !important;
+      padding: 24px !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--accent2), var(--accent));
+      opacity: 0.6;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px) !important;
+      border-color: rgba(79, 195, 247, 0.25) !important;
+      box-shadow: 0 15px 35px rgba(79, 195, 247, 0.1) !important;
+    }
+
+    .glass-card ul {
+      margin: 0 !important;
+      padding-left: 20px !important;
+    }
+
+    .glass-card li {
+      margin-bottom: 8px !important;
+      color: #c9d1d9 !important;
+    }
+
+    .glass-card li:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    /* === 徽章系統 === */
+    .badge-container {
+      display: flex !important;
+      gap: 10px !important;
+      margin-bottom: 16px !important;
+    }
+
+    .repo-badge {
+      background: rgba(232, 100, 58, 0.12) !important;
+      border: 1px solid rgba(232, 100, 58, 0.4) !important;
+      color: var(--accent) !important;
+      padding: 4px 10px !important;
+      border-radius: 20px !important;
+      font-size: 0.6em !important;
+      font-weight: 700 !important;
+    }
+
+    .star-badge {
+      background: rgba(79, 195, 247, 0.12) !important;
+      border: 1px solid rgba(79, 195, 247, 0.4) !important;
+      color: var(--accent2) !important;
+      padding: 4px 10px !important;
+      border-radius: 20px !important;
+      font-size: 0.6em !important;
+      font-weight: 700 !important;
+    }
+
+    /* === 任務範例區塊 === */
+    .example-box {
+      background: rgba(255, 255, 255, 0.02) !important;
+      border-left: 4px solid var(--accent2) !important;
+      border-radius: 0 8px 8px 0 !important;
+      padding: 16px 20px !important;
+      margin-top: 15px !important;
+    }
+
+    .example-box h4 {
+      margin: 0 0 8px 0 !important;
+      font-size: 0.66em !important;
+      color: #ffffff !important;
+      font-weight: 700 !important;
+    }
+
+    .example-box p {
+      margin: 0 !important;
+      font-size: 0.52em !important;
+      color: #8b949e !important;
+      line-height: 1.5 !important;
+    }
+
+    /* === 表格設計 === */
+    .reveal table {
+      width: 100% !important;
+      border-collapse: collapse !important;
+      font-size: 0.52em !important;
+      margin-top: 15px !important;
+      background: rgba(22, 27, 34, 0.4) !important;
+      backdrop-filter: blur(8px) !important;
+      border-radius: 8px !important;
+      overflow: hidden !important;
+      border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .reveal th {
+      background: rgba(79, 195, 247, 0.08) !important;
+      color: var(--accent2) !important;
+      font-weight: 700 !important;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.08) !important;
+    }
+
+    .reveal td, .reveal th {
+      padding: 10px 14px !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .reveal tr:last-child td {
+      border-bottom: none !important;
+    }
+
+    /* === 終端機區塊 === */
+    .terminal-box {
+      background: #010409 !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 8px !important;
+      padding: 16px 20px !important;
+      font-family: 'Courier New', Courier, monospace !important;
+      font-size: 0.46em !important;
+      line-height: 1.5 !important;
+      color: #58a6ff !important;
+      overflow-x: auto !important;
+    }
+
+    .terminal-box span.comment {
+      color: #8b949e !important;
+    }
+
+    .terminal-box span.cmd {
+      color: #ff7b72 !important;
+    }
+
+    /* === 紅焰哥流程圖 === */
+    .flow-container {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      width: 100% !important;
+      margin-top: 20px !important;
+      gap: 5px !important;
+    }
+
+    .flow-step {
+      flex: 1 !important;
+      background: rgba(22, 27, 34, 0.6) !important;
+      border: 1px solid rgba(255, 255, 255, 0.06) !important;
+      border-radius: 8px !important;
+      padding: 12px 8px !important;
+      text-align: center !important;
+      position: relative !important;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .flow-step:hover {
+      border-color: var(--accent2) !important;
+      transform: translateY(-3px) !important;
+    }
+
+    .flow-step h4 {
+      font-size: 0.54em !important;
+      margin: 0 0 6px 0 !important;
+      color: #ffffff !important;
+    }
+
+    .flow-step p {
+      font-size: 0.42em !important;
+      margin: 0 !important;
+      color: #8b949e !important;
+    }
+
+    .flow-arrow {
+      color: var(--accent2) !important;
+      font-weight: bold !important;
+      font-size: 1.2em !important;
+      user-select: none !important;
+    }
+
+    /* === 提示音效解鎖 Overlay === */
+    #unlock-audio-hint {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: rgba(232, 100, 58, 0.85);
+      backdrop-filter: blur(8px);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      z-index: 1000;
+      pointer-events: none;
+      animation: pulse 1.8s infinite;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    @keyframes pulse { 
+      0%, 100% { opacity: 1; transform: scale(1); } 
+      50% { opacity: 0.5; transform: scale(0.96); } 
+    }
+
+    /* === 翻頁效果選單 === */
+    #transition-container {
+      position: fixed !important;
+      top: 20px !important;
+      right: 20px !important;
+      z-index: 99999 !important;
+      font-family: sans-serif !important;
+      width: 230px !important;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    #transition-card {
+      background: rgba(15, 23, 42, 0.85) !important;
+      backdrop-filter: blur(12px) !important;
+      border: 1px solid rgba(255,255,255,0.08) !important;
+      border-radius: 8px !important;
+      padding: 5px !important;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5) !important;
+    }
+    .menu-title {
+      font-size: 11px !important;
+      color: #64748b !important;
+      padding: 6px 12px 3px 12px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase !important;
+    }
+    #transition-header {
+      background: rgba(255,255,255,0.04) !important;
+      color: white !important;
+      padding: 10px 14px !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      border-radius: 6px !important;
+      cursor: pointer !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      user-select: none !important;
+      transition: background-color 0.2s;
+    }
+    #transition-header:hover {
+      background: rgba(255,255,255,0.08) !important;
+      color: var(--accent2) !important;
+    }
+    #transition-header.open .arrow {
+      transform: rotate(180deg);
+    }
+    #transition-header .arrow {
+      font-size: 8px;
+      transition: transform 0.2s;
+    }
+    #transition-list {
+      display: none;
+      margin-top: 6px !important;
+      border-radius: 6px !important;
+      overflow-y: auto !important;
+      max-height: 280px !important;
+    }
+    .transition-item {
+      padding: 9px 14px !important;
+      font-size: 12px !important;
+      color: #cbd5e1 !important;
+      cursor: pointer !important;
+      background: transparent !important;
+      text-align: left !important;
+      user-select: none !important;
+      transition: background-color 0.2s, color 0.2s;
+      border-radius: 4px;
+    }
+    .transition-item:hover {
+      background: rgba(255,255,255,0.05) !important;
+      color: white !important;
+    }
+    .transition-item.active {
+      background: var(--accent2) !important;
+      color: #0d1117 !important;
+      font-weight: 700 !important;
+    }
+
+    /* 自訂過渡效果 CSS 規則 */
+    /* 1. 閃光推近 (Flash Zoom) */
+    .reveal.flash-zoom .slides section {
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease, filter 0.8s ease !important;
+    }
+    .reveal.flash-zoom .slides section.past {
+      opacity: 0;
+      transform: scale(2.8) translateZ(0);
+      filter: brightness(4) blur(8px);
+    }
+    .reveal.flash-zoom .slides section.future {
+      opacity: 0;
+      transform: scale(0.15) translateZ(0);
+      filter: brightness(4) blur(8px);
+    }
+    .reveal.flash-zoom .slides section.present {
+      opacity: 1;
+      transform: scale(1) translateZ(0);
+      filter: brightness(1) blur(0);
+    }
+
+    /* 2. 傾斜浮升 (Tilt Rise) */
+    .reveal.tilt-rise .slides section {
+      transition: transform 0.85s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.85s ease !important;
+      transform-style: preserve-3d;
+    }
+    .reveal.tilt-rise .slides section.past {
+      opacity: 0;
+      transform: translateY(-80%) rotateX(30deg) rotateY(5deg) scale(0.9) translateZ(80px);
+    }
+    .reveal.tilt-rise .slides section.future {
+      opacity: 0;
+      transform: translateY(80%) rotateX(-30deg) rotateY(-5deg) scale(0.9) translateZ(80px);
+    }
+    .reveal.tilt-rise .slides section.present {
+      opacity: 1;
+      transform: translateY(0) rotateX(0) rotateY(0) scale(1) translateZ(0);
+    }
+
+    /* 3. 景深掃入 (Depth Sweep) */
+    .reveal.depth-sweep .slides section {
+      transition: transform 0.9s cubic-bezier(0.3, 0.8, 0.4, 1), opacity 0.9s ease, filter 0.9s ease !important;
+    }
+    .reveal.depth-sweep .slides section.past {
+      opacity: 0;
+      transform: scale(0.7) translateX(-100%) rotateY(15deg);
+      filter: blur(12px);
+    }
+    .reveal.depth-sweep .slides section.future {
+      opacity: 0;
+      transform: scale(0.7) translateX(100%) rotateY(-15deg);
+      filter: blur(12px);
+    }
+    .reveal.depth-sweep .slides section.present {
+      opacity: 1;
+      transform: scale(1) translateX(0) rotateY(0);
+      filter: blur(0);
+    }
+
+    /* 4. 玻璃擦拭 (Glass Wipe) */
+    .reveal.glass-wipe .slides section {
+      transition: clip-path 0.95s cubic-bezier(0.76, 0, 0.24, 1), opacity 0.95s ease, transform 0.95s cubic-bezier(0.76, 0, 0.24, 1) !important;
+    }
+    .reveal.glass-wipe .slides section.past {
+      opacity: 0;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+      transform: translateX(-40px) scale(0.97);
+    }
+    .reveal.glass-wipe .slides section.future {
+      opacity: 0;
+      clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+      transform: translateX(40px) scale(0.97);
+    }
+    .reveal.glass-wipe .slides section.present {
+      opacity: 1;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+      transform: translateX(0) scale(1);
+    }
+
+    /* 5. 電影彈出 (Cinema Pop) */
+    .reveal.cinema-pop .slides section {
+      transition: transform 0.85s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.85s ease, filter 0.85s ease !important;
+    }
+    .reveal.cinema-pop .slides section.past {
+      opacity: 0;
+      transform: scale(0.35) rotate(-6deg);
+      filter: brightness(0.3) contrast(1.4);
+    }
+    .reveal.cinema-pop .slides section.future {
+      opacity: 0;
+      transform: scale(1.6) rotate(6deg);
+      filter: brightness(1.8) contrast(0.6);
+    }
+    .reveal.cinema-pop .slides section.present {
+      opacity: 1;
+      transform: scale(1) rotate(0);
+      filter: brightness(1) contrast(1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === 2. HTML MARKUP FOR OVERLAY ELEMENTS === -->
+  <!-- 翻頁效果選單 -->
+  <div id="transition-container">
+    <div id="transition-card">
+      <div class="menu-title">切換翻頁效果</div>
+      <div id="transition-header">
+        <span id="transition-current">縮放翻飛 (Zoom)</span>
+        <span class="arrow">▼</span>
+      </div>
+      <div id="transition-list">
+        <div class="transition-item active" data-val="zoom">縮放翻飛 (Zoom)</div>
+        <div class="transition-item" data-val="slide">橫向滑動 (Slide)</div>
+        <div class="transition-item" data-val="fade">柔光淡入 (Fade)</div>
+        <div class="transition-item" data-val="convex">3D凸面翻頁 (Convex)</div>
+        <div class="transition-item" data-val="concave">3D凹面翻頁 (Concave)</div>
+        <div class="transition-item" data-val="flash-zoom">閃光推近 (Flash Zoom)</div>
+        <div class="transition-item" data-val="tilt-rise">傾斜浮升 (Tilt Rise)</div>
+        <div class="transition-item" data-val="depth-sweep">景深掃入 (Depth Sweep)</div>
+        <div class="transition-item" data-val="glass-wipe">玻璃擦拭 (Glass Wipe)</div>
+        <div class="transition-item" data-val="cinema-pop">電影彈出 (Cinema Pop)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 音效提示 -->
+  <div id="unlock-audio-hint">🔊 點擊任意處開啟翻頁音效</div>
+
+  <!-- Reveal.js Slides -->
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- Slide 1: 封面 -->
+      <section data-transition="zoom" style="text-align: center;">
+        <div style="margin: 0 auto; max-width: 800px;">
+          <h1 style="font-size: 2.8em !important; margin-bottom: 30px !important;">AntiGravity 商業應用<br>推薦 Agent Skills</h1>
+          <p style="font-size: 0.9em !important; color: var(--accent2); font-weight: 700; margin-bottom: 40px !important;">
+            5 個 GitHub Star 1,000+ 的實務型 Skill Repo
+          </p>
+          <div class="glass-card" style="padding: 20px !important; display: inline-block; width: 100%;">
+            <p style="margin: 0 !important; font-size: 0.75em !important; color: #ffffff;">
+              <strong>適用：</strong>商業模式、行銷成長、營收管理、內部溝通與產品管理
+            </p>
+          </div>
+          <div style="margin-top: 50px; font-size: 0.65em; color: #8b949e;">
+            整理日期：2026 年 7 月 25 日 &nbsp;|&nbsp; 報告整理：如玉（RuYu）
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 2: 一、推薦摘要 -->
+      <section data-transition="zoom">
+        <h2>一、推薦摘要</h2>
+        <div class="grid-container grid-2">
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <p style="margin-bottom: 20px !important;">
+              本報告以<strong>商業實務價值</strong>、<strong>AntiGravity 相容性</strong>、<strong>GitHub 社群規模</strong>及可落地程度為主要篩選條件。
+            </p>
+            <div class="glass-card" style="padding: 15px 20px !important; border-left: 4px solid var(--accent) !important;">
+              <p style="margin: 0 !important; font-size: 0.7em !important;">
+                <strong>修正查核：</strong>前一版 `wondelai/skills` 未達 1,000 Star 門檻，本版已替換為 `awesome-agent-skills` (28.9k Star)，確保品質。
+              </p>
+            </div>
+          </div>
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Repo 核心 Skill</th>
+                  <th>商業用途</th>
+                  <th>約略 Star</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>marketingskills</strong></td>
+                  <td>行銷策略、文案與 SEO</td>
+                  <td><span class="star-badge">41.6k</span></td>
+                </tr>
+                <tr>
+                  <td><strong>claude-skills</strong></td>
+                  <td>銷售、客戶成功與提案</td>
+                  <td><span class="star-badge">23.1k</span></td>
+                </tr>
+                <tr>
+                  <td><strong>skills (Anthropic)</strong></td>
+                  <td>企業內部溝通與文件處理</td>
+                  <td><span class="star-badge">82.8k+</span></td>
+                </tr>
+                <tr>
+                  <td><strong>antigravity-awesome</strong></td>
+                  <td>AntiGravity 專用技能庫</td>
+                  <td><span class="star-badge">42.6k</span></td>
+                </tr>
+                <tr>
+                  <td><strong>awesome-agent-skills</strong></td>
+                  <td>跨平台 Skill 導航庫</td>
+                  <td><span class="star-badge">28.9k</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 3: 二、Marketing Skills -->
+      <section data-transition="zoom">
+        <h2>二、Marketing Skills：商業行銷全能包</h2>
+        <div class="grid-container grid-2">
+          <div class="glass-card">
+            <div class="badge-container">
+              <span class="repo-badge">coreyhaines31/marketingskills</span>
+              <span class="star-badge">★ 41.6k</span>
+            </div>
+            <h3>主要商業用途</h3>
+            <ul>
+              <li><strong>策略規劃：</strong>行銷策略、市場與競爭者研究</li>
+              <li><strong>文案寫作：</strong>銷售頁、網站首頁與廣告文案</li>
+              <li><strong>推廣執行：</strong>SEO 與內容策略、電子郵件與社群行銷</li>
+              <li><strong>轉換優化：</strong>CRO 轉換率優化、定價與方案包裝</li>
+            </ul>
+            <div style="margin-top: 15px; font-size: 0.7em;">
+              <strong>優先建議安裝：</strong><code>marketing-plan</code>, <code>customer-research</code>, <code>copywriting</code>, <code>pricing</code>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="example-box">
+              <h4>AntiGravity 任務範例</h4>
+              <p>
+                "使用 <strong>marketing-plan</strong> 技能，為我的 AI 教育講師服務建立一份 90 天商業推廣計畫，包含目標客群、價值主張、內容策略、轉換漏斗與每週行動。"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 4: 三、Business Growth Skills -->
+      <section data-transition="zoom">
+        <h2>三、Business Growth Skills：營收與客戶成長</h2>
+        <div class="grid-container grid-2">
+          <div class="glass-card">
+            <div class="badge-container">
+              <span class="repo-badge">alirezarezvani/claude-skills</span>
+              <span class="star-badge">★ 23.1k</span>
+            </div>
+            <h3>主要商業用途</h3>
+            <ul>
+              <li><strong>客戶管理：</strong>客戶健康度與續約風險管理</li>
+              <li><strong>銷售管線：</strong>銷售管線預估、成交機率與業績預測</li>
+              <li><strong>技術提案：</strong>RFP 回覆、技術提案與 PoC 規劃</li>
+              <li><strong>合約草擬：</strong>服務建議書、合作方案與合約草稿</li>
+              <li><strong>營運決策：</strong>主管決策輔助與營運數據分析</li>
+            </ul>
+            <div style="margin-top: 15px; font-size: 0.7em;">
+              <strong>優先建議安裝：</strong><code>customer-success-manager</code>, <code>revenue-operations</code>, <code>contract-and-proposal-writer</code>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="example-box">
+              <h4>AntiGravity 任務範例</h4>
+              <p>
+                "使用 <strong>revenue-operations</strong> 技能，分析我的客戶清單，依照成交機率、預估金額、下一步行動和流失風險，建立一份銷售管線報告。"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 5: 四、Anthropic Skills -->
+      <section data-transition="zoom">
+        <h2>四、Anthropic Skills：企業文件與內部溝通</h2>
+        <div class="grid-container grid-2">
+          <div class="glass-card">
+            <div class="badge-container">
+              <span class="repo-badge">anthropics/skills</span>
+              <span class="star-badge">★ 82.8k+</span>
+            </div>
+            <h3>主要商業用途</h3>
+            <ul>
+              <li><strong>內部資訊傳遞：</strong>公司公告、主管更新與組織變革溝通</li>
+              <li><strong>專案匯報：</strong>專案週報、月報與 3P Update (Progress, Plans, Problems)</li>
+              <li><strong>自動化處理：</strong>Word (docx)、Excel (xlsx)、PowerPoint (pptx)、PDF 處理</li>
+              <li><strong>架構範本：</strong>企業標準工作流與 Skill 規格定義參考</li>
+            </ul>
+            <div style="margin-top: 15px; font-size: 0.7em;">
+              <strong>優先建議安裝：</strong><code>internal-comms</code>, <code>docx</code>, <code>xlsx</code>, <code>pptx</code>, <code>pdf</code>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="example-box">
+              <h4>AntiGravity 任務範例</h4>
+              <p>
+                "使用 <strong>internal-comms</strong> 技能，把這週的專案研發記錄整理成主管週報，包含本週 Progress、下週 Plans、當前 Problems 與 Decisions Needed。"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 6: 五、AntiGravity Awesome Skills -->
+      <section data-transition="zoom">
+        <h2>五、AntiGravity Awesome Skills：專用技能庫</h2>
+        <div class="grid-container grid-2">
+          <div class="glass-card">
+            <div class="badge-container">
+              <span class="repo-badge">sickn33/antigravity-awesome-skills</span>
+              <span class="star-badge">★ 42.6k</span>
+            </div>
+            <h3>主要商業用途</h3>
+            <ul>
+              <li><strong>產品經理專用：</strong>PRD 撰寫、功能排序、技術規格規劃</li>
+              <li><strong>商業規劃：</strong>商業分析工具、策略研究與競品比對</li>
+              <li><strong>自動化模式：</strong>Autonomous Agent 模式、多 Agent 協作</li>
+              <li><strong>角色包封裝：</strong>依工作角色 (如 Content Creator) 快速載入套裝</li>
+            </ul>
+            <div style="margin-top: 15px; font-size: 0.7em;">
+              <strong>優先建議安裝：</strong><code>product-manager-toolkit</code>, <code>business-analyst</code>, <code>autonomous-agent-patterns</code>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="example-box" style="border-left-color: var(--accent) !important;">
+              <h4>AntiGravity 任務範例</h4>
+              <p>
+                "使用 <strong>product-manager-toolkit</strong> 技能，將 12 個功能需求用 RICE 模型排序，輸出 Reach、Impact、Confidence、Effort、RICE Score 優先級與排序理由。"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 7: 六、Awesome Agent Skills -->
+      <section data-transition="zoom">
+        <h2>六、Awesome Agent Skills：跨平台 Skill 導航庫</h2>
+        <div class="grid-container grid-2">
+          <div class="glass-card">
+            <div class="badge-container">
+              <span class="repo-badge">VoltAgent/awesome-agent-skills</span>
+              <span class="star-badge">★ 28.9k</span>
+            </div>
+            <h3>主要商業用途</h3>
+            <ul>
+              <li><strong>商業 SaaS 整合：</strong>金流支付 (Stripe)、資料庫 (Notion)、設計 (Figma)、內容發布 (Typefully) 串接</li>
+              <li><strong>跨工具支援：</strong>統一 Skill 規範，相容 Claude Code、Cursor、Gemini CLI 等</li>
+              <li><strong>搜尋對照：</strong>快速搜尋、比較並找出特定第三方服務的成熟 Skill</li>
+            </ul>
+            <div style="margin-top: 15px; font-size: 0.7em;">
+              <strong>優先建議安裝：</strong><code>Stripe skills</code>, <code>Google Workspace skills</code>, <code>Notion skills</code>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="example-box">
+              <h4>AntiGravity 任務範例</h4>
+              <p>
+                "從 <strong>awesome-agent-skills</strong> 中找出適合『客戶開發、提案製作、電子郵件追蹤與內容自動化發布』的 Skills，並規劃在 AntiGravity 中的安裝組合。"
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 8: 七、最建議的安裝組合 -->
+      <section data-transition="zoom">
+        <h2>七、最建議的安裝組合</h2>
+        <p style="margin-bottom: 25px !important;">
+          不建議一次安裝所有技能，容易造成混淆或過度消耗 Token。建議分階段載入：
+        </p>
+        <div class="grid-container grid-3">
+          <div class="glass-card" style="padding: 16px !important;">
+            <h3 style="color: var(--accent2) !important; font-size: 1.05em !important; margin-bottom: 12px !important;">
+              第一階段：商業基礎組
+            </h3>
+            <ul style="font-size: 0.72em !important;">
+              <li><code>create-business</code> (商業模式)</li>
+              <li><code>customer-research</code> (需求調查)</li>
+              <li><code>marketing-plan</code> (行銷推廣)</li>
+              <li><code>copywriting</code> (文案寫作)</li>
+              <li><code>internal-comms</code> (日常週報)</li>
+            </ul>
+          </div>
+          <div class="glass-card" style="padding: 16px !important;">
+            <h3 style="color: var(--warn) !important; font-size: 1.05em !important; margin-bottom: 12px !important;">
+              第二階段：營運成長組
+            </h3>
+            <ul style="font-size: 0.72em !important;">
+              <li><code>revenue-operations</code> (銷售管線)</li>
+              <li><code>customer-success</code> (續約健康)</li>
+              <li><code>sales-enablement</code> (銷售素材)</li>
+              <li><code>pricing</code> (定價包裝)</li>
+              <li><code>proposal-writer</code> (合約提案)</li>
+            </ul>
+          </div>
+          <div class="glass-card" style="padding: 16px !important;">
+            <h3 style="color: var(--accent) !important; font-size: 1.05em !important; margin-bottom: 12px !important;">
+              第三階段：產品管理組
+            </h3>
+            <ul style="font-size: 0.72em !important;">
+              <li><code>product-manager-toolkit</code></li>
+              <li><code>competitor-profiling</code> (競品)</li>
+              <li><code>analytics</code> (數據分析)</li>
+              <li><code>launch</code> (上線管理)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 9: 八、AntiGravity 安裝方式 -->
+      <section data-transition="zoom">
+        <h2>八、AntiGravity 安裝方式</h2>
+        <div class="grid-container grid-2">
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <p style="margin-bottom: 15px !important;">
+              建議將專案用 Skill 放在<strong>工作區根目錄</strong>，隨專案代碼一起進行 Git 版本管理：
+            </p>
+            <div class="glass-card" style="padding: 15px 20px !important;">
+              <code style="font-size: 0.75em; color: var(--accent2);">&lt;workspace-root&gt;/.agents/skills/&lt;skill-folder&gt;/</code>
+              <p style="margin: 8px 0 0 0 !important; font-size: 0.65em !important; color: #8b949e;">
+                每個 Skill 資料夾內必須包含一個 <code>SKILL.md</code> 說明檔。
+              </p>
+            </div>
+          </div>
+          <div>
+            <div class="terminal-box">
+              <span class="comment"># 1. 建立技能目錄</span><br>
+              <span class="cmd">mkdir</span> -p .agents/skills<br><br>
+              <span class="comment"># 2. 複製/下載 Skill (以 marketingskills 為例)</span><br>
+              <span class="cmd">git clone</span> https://github.com/coreyhaines31/marketingskills.git<br><br>
+              <span class="comment"># 3. 搬移所需 Skill 至專案工作區</span><br>
+              <span class="cmd">cp</span> -R marketingskills/skills/marketing-plan .agents/skills/<br>
+              <span class="cmd">cp</span> -R marketingskills/skills/copywriting .agents/skills/
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slide 10: 九、依商業情境選擇 Skill -->
+      <section data-transition="zoom">
+        <h2>九、依商業情境選擇 Skill</h2>
+        <div style="width: 100%;">
+          <table>
+            <thead>
+              <tr>
+                <th style="width: 25%;">商業情境</th>
+                <th style="width: 35%;">優先推薦 Skill</th>
+                <th style="width: 40%;">預期交付產出</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>建立新服務或模式</strong></td>
+                <td><code>business-strategy</code> / <code>customer-research</code></td>
+                <td>市場假設驗證、價值主張、定價模型與商業計畫書</td>
+              </tr>
+              <tr>
+                <td><strong>提升曝光與獲客</strong></td>
+                <td><code>marketing-plan</code> / <code>copywriting</code> / <code>SEO</code></td>
+                <td>內容日曆、銷售頁文案、廣告企劃與轉換率漏斗</td>
+              </tr>
+              <tr>
+                <td><strong>管理客戶與營收</strong></td>
+                <td><code>revenue-operations</code> / <code>customer-success</code></td>
+                <td>銷售 Pipeline、續約風險清單與客戶挽留下一步行動</td>
+              </tr>
+              <tr>
+                <td><strong>撰寫商務合作提案</strong></td>
+                <td><code>proposal-writer</code> / <code>sales-enablement</code></td>
+                <td>服務建議書、合作報價架構、銷售簡報大綱與談判重點</td>
+              </tr>
+              <tr>
+                <td><strong>產品功能規劃</strong></td>
+                <td><code>product-manager-toolkit</code></td>
+                <td>PRD 產品需求文檔、RICE 需求排序、Roadmap 規劃</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Slide 11: 十、紅焰哥的推薦工作流 -->
+      <section data-transition="zoom">
+        <h2>十、紅焰哥的推薦工作流</h2>
+        <p style="margin-bottom: 20px !important;">
+          以<strong>「AI 教育講師、課程服務與教育科技工具」</strong>為核心，串聯 6 大 Skill 組成高效商務閉環：
+        </p>
+        <div class="flow-container">
+          <div class="flow-step">
+            <h4>1. 需求調查</h4>
+            <p>customer-research</p>
+          </div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-step">
+            <h4>2. 服務定位</h4>
+            <p>business-strategy</p>
+          </div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-step">
+            <h4>3. 方案定價</h4>
+            <p>pricing</p>
+          </div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-step">
+            <h4>4. 行銷內容</h4>
+            <p>copywriting</p>
+          </div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-step">
+            <h4>5. 銷售簡報</h4>
+            <p>sales-enablement</p>
+          </div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-step">
+            <h4>6. 合作提案</h4>
+            <p>proposal-writer</p>
+          </div>
+        </div>
+        <div class="example-box" style="margin-top: 25px !important;">
+          <p style="text-align: center; font-size: 0.75em !important; color: #ffffff;">
+            <strong>工作流方向：</strong>探測市場需求 ➔ 精準定位服務 ➔ 包裝定價方案 ➔ 生成行銷內容 ➔ 輸出銷售簡報 ➔ 快速產出合約提案
+          </p>
+        </div>
+      </section>
+
+      <!-- Slide 12: 十一、資料來源與說明 -->
+      <section data-transition="zoom">
+        <h2>十一、資料來源與說明</h2>
+        <div class="grid-container grid-2">
+          <div class="glass-card">
+            <h3>GitHub Repo 參考連結</h3>
+            <ul style="font-size: 0.7em !important;">
+              <li style="margin-bottom: 10px !important;">
+                <a href="https://github.com/coreyhaines31/marketingskills" target="_blank" style="color: var(--accent2);">marketingskills</a>
+              </li>
+              <li style="margin-bottom: 10px !important;">
+                <a href="https://github.com/alirezarezvani/claude-skills" target="_blank" style="color: var(--accent2);">claude-skills</a>
+              </li>
+              <li style="margin-bottom: 10px !important;">
+                <a href="https://github.com/anthropics/skills" target="_blank" style="color: var(--accent2);">anthropics/skills</a>
+              </li>
+              <li style="margin-bottom: 10px !important;">
+                <a href="https://github.com/sickn33/antigravity-awesome-skills" target="_blank" style="color: var(--accent2);">antigravity-awesome-skills</a>
+              </li>
+              <li style="margin-bottom: 10px !important;">
+                <a href="https://github.com/VoltAgent/awesome-agent-skills" target="_blank" style="color: var(--accent2);">awesome-agent-skills</a>
+              </li>
+            </ul>
+          </div>
+          <div style="display: flex; flex-direction: column; justify-content: center;">
+            <p style="margin-bottom: 15px !important;">
+              <strong>查核說明：</strong>
+            </p>
+            <p style="font-size: 0.7em !important; line-height: 1.5 !important;">
+              1. 本簡報 Star 數統計截至 2026 年 7 月 25 日，GitHub 數據隨時間動態增長。<br>
+              2. 由於單一 Skill 通常無獨立 Star 計算，本簡報所列 Star 數皆為 Repo 整體總計值。
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+  
+  <!-- === 3. JAVASCRIPT CONTROLLERS AND SOUND GENERATORS === -->
+  <script>
+    // ==========================================
+    // 1. 初始化 Reveal.js
+    // ==========================================
+    Reveal.initialize({
+      hash: true,
+      transition: 'zoom', // 預設為縮放過渡 (zoom)
+      transitionSpeed: 'default',
+      backgroundTransition: 'zoom',
+      center: true,
+      progress: true,
+      controls: true,
+      slideNumber: 'c/t',
+      width: 1000,
+      height: 620,
+      margin: 0.18
+    });
+
+    // ==========================================
+    // 2. Web Audio API 音效合成器
+    // ==========================================
+    let audioCtx = null;
+    let noiseBuffer = null;
+
+    function initAudio() {
+      if (audioCtx) return;
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      
+      // 預先生成白噪音 buffer
+      const bufferSize = audioCtx.sampleRate * 1.0;
+      const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+      const data = buffer.getChannelData(0);
+      for (let i = 0; i < bufferSize; i++) {
+        data[i] = Math.random() * 2 - 1;
+      }
+      noiseBuffer = buffer;
+    }
+
+    // 實體 page-flip.mp3 載入
+    const flipAudio = new Audio('page-flip.mp3');
+    flipAudio.preload = 'auto';
+    flipAudio.volume = 0.35; // 混合實體摩擦聲與電子音
+
+    function playMp3Sound() {
+      flipAudio.currentTime = 0;
+      flipAudio.play().catch(e => {
+        console.log('MP3 播放受自動播放政策限制或尚未與頁面互動:', e);
+      });
+    }
+
+    // 各種特效電子合成音
+    function playWhoosh(duration, startFreq, endFreq, gainVal) {
+      if (!audioCtx) return;
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = noiseBuffer;
+      
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.Q.value = 3.0;
+      filter.frequency.setValueAtTime(startFreq, audioCtx.currentTime);
+      filter.frequency.exponentialRampToValueAtTime(endFreq, audioCtx.currentTime + duration);
+      
+      const gainNode = audioCtx.createGain();
+      gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+      gainNode.gain.linearRampToValueAtTime(gainVal, audioCtx.currentTime + duration * 0.2);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+      
+      noise.connect(filter);
+      filter.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      
+      noise.start();
+      noise.stop(audioCtx.currentTime + duration);
+    }
+
+    function playChime(startTime) {
+      if (!audioCtx) return;
+      const freqs = [880, 1109, 1318];
+      freqs.forEach((f, idx) => {
+        const osc = audioCtx.createOscillator();
+        const gainNode = audioCtx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(f, startTime + idx * 0.05);
+        gainNode.gain.setValueAtTime(0, startTime);
+        gainNode.gain.linearRampToValueAtTime(0.08, startTime + idx * 0.05 + 0.02);
+        gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + idx * 0.05 + 0.6);
+        
+        osc.connect(gainNode);
+        gainNode.connect(audioCtx.destination);
+        osc.start(startTime + idx * 0.05);
+        osc.stop(startTime + idx * 0.05 + 0.6);
+      });
+    }
+
+    function playThumpWhoosh(startTime, isConvex) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+      osc.type = 'sine';
+      if (isConvex) {
+        osc.frequency.setValueAtTime(150, startTime);
+        osc.frequency.exponentialRampToValueAtTime(50, startTime + 0.4);
+      } else {
+        osc.frequency.setValueAtTime(50, startTime);
+        osc.frequency.exponentialRampToValueAtTime(150, startTime + 0.4);
+      }
+      gainNode.gain.setValueAtTime(0.15, startTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.4);
+      osc.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      osc.start(startTime);
+      osc.stop(startTime + 0.4);
+      
+      if (isConvex) {
+        playWhoosh(0.4, 400, 120, 0.08);
+      } else {
+        playWhoosh(0.4, 120, 480, 0.08);
+      }
+    }
+
+    function playFlash(startTime) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+      osc.type = 'sawtooth';
+      osc.frequency.setValueAtTime(1500, startTime);
+      osc.frequency.exponentialRampToValueAtTime(300, startTime + 0.35);
+      gainNode.gain.setValueAtTime(0.08, startTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.35);
+      
+      const noise = audioCtx.createBufferSource();
+      noise.buffer = noiseBuffer;
+      const filter = audioCtx.createBiquadFilter();
+      filter.type = 'highpass';
+      filter.frequency.setValueAtTime(1200, startTime);
+      const noiseGain = audioCtx.createGain();
+      noiseGain.gain.setValueAtTime(0.15, startTime);
+      noiseGain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.15);
+      
+      noise.connect(filter);
+      filter.connect(noiseGain);
+      noiseGain.connect(audioCtx.destination);
+      
+      osc.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      
+      osc.start(startTime);
+      osc.stop(startTime + 0.35);
+      noise.start(startTime);
+      noise.stop(startTime + 0.15);
+    }
+
+    function playPitchSweep(startF, endF, duration, type='sine') {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(startF, audioCtx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(endF, audioCtx.currentTime + duration);
+      gainNode.gain.setValueAtTime(0, audioCtx.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.12, audioCtx.currentTime + duration * 0.15);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+      
+      osc.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    }
+
+    function playGlassWipe(startTime) {
+      if (!audioCtx) return;
+      const osc1 = audioCtx.createOscillator();
+      const osc2 = audioCtx.createOscillator();
+      const gainNode = audioCtx.createGain();
+      
+      osc1.type = 'sine';
+      osc1.frequency.setValueAtTime(1800, startTime);
+      osc1.frequency.linearRampToValueAtTime(2200, startTime + 0.45);
+      
+      osc2.type = 'sine';
+      osc2.frequency.setValueAtTime(2500, startTime);
+      osc2.frequency.linearRampToValueAtTime(3000, startTime + 0.45);
+      
+      gainNode.gain.setValueAtTime(0, startTime);
+      gainNode.gain.linearRampToValueAtTime(0.04, startTime + 0.08);
+      gainNode.gain.exponentialRampToValueAtTime(0.001, startTime + 0.45);
+      
+      osc1.connect(gainNode);
+      osc2.connect(gainNode);
+      gainNode.connect(audioCtx.destination);
+      
+      osc1.start(startTime);
+      osc2.start(startTime);
+      osc1.stop(startTime + 0.45);
+      osc2.stop(startTime + 0.45);
+      
+      playWhoosh(0.35, 1200, 2800, 0.04);
+    }
+
+    // 根據切換的特效播放對應混音
+    function playTransitionSound(type) {
+      initAudio();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      
+      // 播放 MP3 實體翻頁聲
+      playMp3Sound();
+      
+      const now = audioCtx.currentTime;
+      switch (type) {
+        case 'zoom':
+          playWhoosh(0.35, 350, 750, 0.12);
+          break;
+        case 'slide':
+          playWhoosh(0.45, 180, 420, 0.15);
+          break;
+        case 'fade':
+          playChime(now);
+          break;
+        case 'convex':
+          playThumpWhoosh(now, true);
+          break;
+        case 'concave':
+          playThumpWhoosh(now, false);
+          break;
+        case 'flash-zoom':
+          playFlash(now);
+          break;
+        case 'tilt-rise':
+          playPitchSweep(200, 750, 0.4);
+          break;
+        case 'depth-sweep':
+          playPitchSweep(180, 75, 0.5, 'triangle');
+          break;
+        case 'glass-wipe':
+          playGlassWipe(now);
+          break;
+        case 'cinema-pop':
+          playPop(now);
+          break;
+      }
+    }
+
+    // 點擊事件解鎖 AudioContext
+    document.addEventListener('click', () => {
+      initAudio();
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const hint = document.getElementById('unlock-audio-hint');
+      if (hint) hint.style.display = 'none';
+    }, { once: true });
+
+    // ==========================================
+    // 3. 翻頁效果選單與過渡控制
+    // ==========================================
+    const transContainer = document.getElementById('transition-container');
+    const transHeader = document.getElementById('transition-header');
+    const transList = document.getElementById('transition-list');
+    const transCurrent = document.getElementById('transition-current');
+    const transItems = document.querySelectorAll('.transition-item');
+
+    let currentTransition = 'zoom'; // 預設
+
+    function updateMenuVisibility() {
+      const indices = Reveal.getIndices();
+      // 只有在第一頁 (封面) 顯示選單，其餘頁面隱藏以免干擾簡報
+      if (indices.h === 0 && indices.v === 0) {
+        transContainer.style.display = 'block';
+        requestAnimationFrame(() => {
+          transContainer.style.opacity = '1';
+          transContainer.style.transform = 'translateY(0)';
+        });
+      } else {
+        transContainer.style.opacity = '0';
+        transContainer.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          const currentIndices = Reveal.getIndices();
+          if (currentIndices.h !== 0 || currentIndices.v !== 0) {
+            transContainer.style.display = 'none';
+          }
+        }, 300);
+      }
+    }
+
+    Reveal.on('slidechanged', (event) => {
+      updateMenuVisibility();
+      playTransitionSound(currentTransition);
+    });
+    Reveal.on('ready', updateMenuVisibility);
+
+    // 選單打開與關閉
+    transHeader.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = transList.style.display === 'block';
+      transList.style.display = isOpen ? 'none' : 'block';
+      transHeader.classList.toggle('open', !isOpen);
+    });
+
+    document.addEventListener('click', () => {
+      transList.style.display = 'none';
+      transHeader.classList.remove('open');
+    });
+
+    // 切換特效
+    transItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const val = this.getAttribute('data-val');
+        const text = this.textContent;
+
+        transCurrent.textContent = text;
+        transItems.forEach(i => i.classList.remove('active'));
+        this.classList.add('active');
+
+        const revealEl = document.querySelector('.reveal');
+        const customClasses = ['zoom', 'slide', 'fade', 'convex', 'concave', 'flash-zoom', 'tilt-rise', 'depth-sweep', 'glass-wipe', 'cinema-pop'];
+        customClasses.forEach(c => revealEl.classList.remove(c));
+        revealEl.classList.add(val);
+
+        currentTransition = val;
+
+        Reveal.configure({ 
+          transition: val,
+          backgroundTransition: val
+        });
+
+        playTransitionSound(val);
+
+        transList.style.display = 'none';
+        transHeader.classList.remove('open');
+      });
+    });
+
+    // 阻斷冒泡，避免點擊選單觸發 Reveal.js 換頁
+    transContainer.addEventListener('click', e => e.stopPropagation());
+    transContainer.addEventListener('mousedown', e => e.stopPropagation());
+    transContainer.addEventListener('touchstart', e => e.stopPropagation());
+  </script>
+</body>
+</html>
